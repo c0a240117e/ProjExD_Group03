@@ -22,7 +22,7 @@ target_y = random.randint(target_radius, HEIGHT - target_radius)
 score = 0
 
 #制限時間
-time_limit_sec = 30
+time_limit_sec = 60
 time_limit_ms = time_limit_sec * 1000
 start_time_ms = pygame.time.get_ticks()
 
@@ -33,8 +33,8 @@ start_time_ms = pygame.time.get_ticks()
 def time_desiplay_count(screen:pygame.surface, font_normal:pygame.font, font_large:pygame.font, start_time_ms:int, time_limit_ms:int)-> bool:
     """
     制限時間の表示と時間切れの判定を行う関数
-    引数screen
-    font
+    引数screen pygameのsurface
+    font pygameのfont
     start_time_ms (int)ゲーム開始の時間(ミリセカンド)
     time_limit_ms (int)制限時間(ミリセカンド)
     """
