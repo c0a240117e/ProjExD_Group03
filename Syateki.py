@@ -21,6 +21,11 @@ target_y = random.randint(target_radius, HEIGHT - target_radius)
 # スコア
 score = 0
 
+
+def display_score(screen:pygame.surface, font:pygame.font, current_score: int):
+    score_text = font.render(f"Score: {score}", True, (0, 0, 0))
+    screen.blit(score_text, (10, 10))
+
 # メインループ
 running = True
 while running:
@@ -45,9 +50,8 @@ while running:
     pygame.draw.circle(screen, (255, 0, 0), (target_x, target_y), target_radius)
     pygame.draw.circle(screen, (255, 255, 255), (target_x, target_y), target_radius // 2)
 
-    # スコア表示
-    score_text = font.render(f"Score: {score}", True, (0, 0, 0))
-    screen.blit(score_text, (10, 10))
+
+    score_display = display_score(screen, font, score)
 
     pygame.display.flip()
     clock.tick(60)
